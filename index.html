@@ -1,5 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html lang = "en">
 <head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title> Задание 1 </title>
 </head>
 <body>
 <ul>
@@ -8,22 +11,117 @@
   <li> 
     <a href = "https://example.com"> https link </a>   </li>
   <li>
-    <a href = "ftp://example.com/file.txt" > ftl link </a>   </li>
+    <a href = "ftp://example.com/flies/file.txt" > ftl link </a>   </li>
   <li>
-    <a href = "ftp://admin:poggers@example.com" input id = "userPassword" type = "password" > ftl link </a>   </li>
+    <a href = "ftp://admin:poggers@example.com/files/file.txt"> ftl link </a>   </li>
   <li>
     <a href = "https://example.com#about"> marker </a> </li>
   <li>
-    <a href = "https://index.html#marker"> site marker </a> </li>
+    <a href = "#marker"> site marker </a> </li>
   <li>
-	<a href = "https://example.com/?a = nice&canvas = blue"> parameter </a> </li>
+	<a href = "https://https://www.youtube.com/watch?v=ynQdJe48bkE&t=10s"> parameter </a> </li>
   <li>
-	<ul>
+	<ul lang = "ru">
 	  <li>
-	    <a href = "https://cringenterprises/aboutus" title = "Информация о компании"> about us </a> </li>
+	    <a href = "https://en.wikipedia.org/wiki/Main_Page" title = "Основная страница"> Основная страница </a> </li>
 	  <li>
-	    <a href =
+	    <a href = "https://en.wikipedia.org/wiki/Wikipedia:Contents" title = "Информация о содержании"> Контент </a> </li>
+	  <li>
+	    <a href = "https://en.wikipedia.org/wiki/Wikipedia:About" title = "Информация о самой Википедии"> О нас </a> </li>
+	  <li>
+	    <a href = "https://en.wikipedia.org/wiki/Wikipedia:Contact_us" title = "Возможности связаться с Википедией"> Связаться с нами </a> </li>
+	</ul> </li>
+  <li>
+    <a> broken link </a> </li>
+  <li>
+    <a href = " "> empty link </a> </li>
+  <li>
+	<a href ="http://example.com" rel = "nofollow"> search engine can't follow link </a> </li>
+  <li>
+     <a href = "http://example.com" rel ="noindex"> search engine hidden link </a> </li> 
+  <li>
+    <p lang = "ru"><a href = "http://example.com"> конекстная ссылка </a></p> </li>
+  <li>
+    <a href = "https://pubchem.ncbi.nlm.nih.gov/compound/2_4_6-Trinitrotoluene"> 
+	  <img src = "1200px-Trinitrotoluene.png" width="50" 
+      height="50" alt="TNT"> </a> </li>
+  <li>
+     <img src="1200px-Trinitrotoluene.png" width="640" height="240" 
+	   alt="Site navigation" usemap="#Navigation">
+	   <map name = "Navigation">
+	     <area coords = "300,150,40" shape = "circle" 
+		 href = "https://pubchem.ncbi.nlm.nih.gov/compound/2_4_6-Trinitrotoluene" alt = "Circle area">
+		 <area shape = "rect" coords = "50,50,150,150" 
+		 href = "https://en.wikipedia.org/wiki/TNT" alt = "tiny rect area">
+	   </map> </li>
+  <li> 
+    <a href = "cringe.html"> relative cur catalog </a> </li>	 
+  <li>
+    <a href = "about/ht.html"> relative about catalog </a> </li>
+  <li>
+    <a href = "../doc.html"> one folder up relative </a> </li>
+  <li>
+    <a href = "../../doc.html"> 2 folders up relative </a> </li>
+  <li>
+	<a href = "/about.html"> main shortened </a> </li>
+  <li> 
+	<a href = "/contacts/contaclist.html"> shortened internal link </a> </li>
 </ul>
+<form action ="/" method = "POST">
+	<label>
+			Имя:<br />
+			<input name="field-name-1" />
+		  </label><br />
+	<label>
+			email:<br />
+			<input name="field-email"
+			  type="email" />
+		  </label><br />
+	<label>
+			Дата рождения :<br />
+			<input name="field-date"
+			  type="date" />
+		  </label><br />
+	Пол: <label><input type="radio" checked="checked"
+			name="radio-group-1" value = "male" />
+			Мужчина </label>
+		  <label><input type="radio"
+			name="radio-group-1" value = "female" />
+			Женщина </label><br />
+	Кол-во конечностей: <br/> <label><input type="radio" checked="checked"
+			name="radio-group-2" value = "limbCou1" />
+			1 </label><br/>
+		  <label><input type="radio"
+			name="radio-group-2" value = "limbCou2" />
+			2 </label><br />
+			<label><input type="radio"
+			name="radio-group-2" value = "limbCou3" />
+			3 </label><br />
+			<label><input type="radio"
+			name="radio-group-2" value = "limbCou4" />
+			4 </label><br />
+			<label><input type="radio"
+			name="radio-group-2" value = "limbCou5" />
+			5 </label><br />
+	<label>
+			Сверхспособности:
+			<br/>
+			<select name="field-name-4[]"
+			  multiple="multiple">
+			  <option value="immortality">Бессмертие</option>
+			  <option value="walkthroughwalls" >Хождение сквозь стены</option>
+			  <option value="levitation">Левитация</option>
+			</select>
+		  </label><br />
+	<label>
+	Биография: <br/>
+		<textarea name = "bio-field"> </textarea>
+	</label> <br/>
+	<label>
+	  <input type = "checkbox" name = "checkbox"> С контрактом ознакомлен(а) </label> <br/>
+	Отправить: <br/>
+	<input type="submit" value="Отправить" />
+</form>
 <p  id = "marker"> marker </p>
 </body>
 </html>
