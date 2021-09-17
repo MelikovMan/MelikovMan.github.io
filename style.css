@@ -1,0 +1,36 @@
+header img{
+  float: left;
+}
+nav li{
+  float: left;
+  padding:20px
+}
+#header{
+width: 100%;
+margin-left: auto;
+margin-right: auto;
+padding: 10px;
+height: 120px;
+}
+body {
+  color: red;
+}
+#content{
+clear: both;
+vertical-align: center;
+horizontal-align: center;
+text-align: center;
+max-width: 960px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 20px;
+}
+#links{
+clear: both;
+vertical-align: center;
+horizontal-align: center;
+max-width: 960px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 20px;
+}
