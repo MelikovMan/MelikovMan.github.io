@@ -1,0 +1,123 @@
+nav li{
+    display: inline-block;
+    margin: auto 50px;
+  }
+  nav ul{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #flex-cont{
+    display: flex;
+    flex-direction: column;
+  }
+  #flexblockform{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #header{
+    display: flex;
+    width: 100%;
+    height: 120px;
+    border: ridge #ccc;
+    border-width: 6px;
+  }
+  body {
+    color: red;
+    background-color: grey;
+  }
+  #content{
+    align-self: flex-start;
+    width: 100%;
+    border: ridge #ccc;
+    border-width: 6px;
+  }
+  #links{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: ridge #ccc;
+    border-width: 6px;
+  }
+  .titles{
+      text-align: center;
+  }
+  #tableblock{
+    width: 100%;
+    border: ridge #ccc;
+    border-width: 6px;
+    order:1;
+  }
+  #formblock{
+    width: 100%;
+    border: ridge #ccc;
+    border-width: 6px;
+    order:0;
+  }
+  footer{
+    width: 100%;
+    height: 30px;
+    border: ridge #ccc;
+    border-width: 6px;
+  }
+  footer p {
+      float: left;
+      margin: 0;
+  }
+  table{
+    table-layout: auto;
+    height: 400px;
+    width: 100%;
+    border: 1px solid red;
+  }
+  table th{
+      border: 1px solid red;
+  }
+  .to{
+    border: 1px solid red;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-color: white;
+    text-align: center;
+    color: black;
+  }
+  .te{
+    border: 1px solid red;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-color: #000;
+    text-align: center;  
+  }
+  @media screen and (min-width: 800px) {
+    nav ul{
+      flex-direction: row;
+      justify-content: center;
+    }
+    #content{
+      align-self: center;
+    }
+    #tableblock{
+      order:0
+    }
+    #formblock{
+      order:1
+    }
+    #header{
+      align-items: center;
+    }
+    #content{
+      max-width: 960px;
+    }
+    #links{
+      max-width: 960px;
+    }
+    #tableblock{
+      max-width: 960px;
+    }
+    #formblock{
+      max-width: 960px;
+    }
+  }
