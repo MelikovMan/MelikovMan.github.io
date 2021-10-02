@@ -17,8 +17,6 @@ body {
   border-width: 6px;
 }
 #links{
-  display: flex;
-  flex-direction: column;
   border: ridge #ccc;
   border-width: 6px;
 }
