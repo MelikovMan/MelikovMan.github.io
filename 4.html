@@ -1,217 +1,237 @@
 <!DOCTYPE html>
 <html lang = "en">
   <head>
-      <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">	
     <link rel="stylesheet" href="styleboot.css" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title> Задание 3 </title>
-</head>
+	<title> Задание 4 </title>
+  </head>
 <body>
-    <div class = "container-fluid">
-        <div class = "row">
-            <div class="col">
-                <header>
-                    <div id="header", class = "container-fluid d-flex">
-                        <img src="image.png" alt="LOGO"/>
-                        <h1> Name </h1>
-                    </div>
-                </header>
-            </div>
-        </div>
-        <div class = "row">
-            <div class="col">
-                <div id="content" class = "container">
-                    <nav>
-                            <ul>
-                                <li> 
-                                    <a href="#hyper"> Hyperlinks </a> </li>
-                                <li> 
-                                    <a href="#tabletitle"> Table </a> </li>
-                                <li> 
-                                    <a href="#linktitle"> Form </a> </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <div class = "row">
-            <div class="col">
-                <div id="links" class = "container"> 
-                <h1 class ="titles" id ="hyper"> Hyperlinks </h1>
+  <div id="flex-cont" class="container-fluid">
+    <div class="row">
+      <div class="col-12 my-2">
+        <header>
+          <div id="header">
+            <img src="image.png" alt="LOGO"/>
+                <h1> Name </h1>
+          </div>
+        </header>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-0 col-md-1 my-2">
+      </div>
+      <div id="aaa" class="col-12 col-md-10">
+        <div class="container-fluid w-100">
+          <div class="row">
+            <div class="col mx-aut0 d-flex flex-column align-items-center">
+              <div id="content" class="my-2 mt-0 mt-md-2 w-100">
+                <nav>
+                  <ul class="d-flex flex-column flex-md-row my-2">
+                    <li class="flex-fill"> 
+                      <a href="#hyper"> Hyperlinks </a> 
+                    </li>
+                    <li class="flex-fill"> 
+                      <a href="#tabletitle"> Table </a> 
+                    </li>
+                    <li class="flex-fill"> 
+                      <a href="#linktitle"> Form </a> 
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div id="links" class="my-2 w-100"> 
+              <h1 class ="titles" id="hyper"> Hyperlinks </h1>
                 <ul>
-                    <li> 
-                    <a href = "http://example.com"> Site </a>   </li>
-                    <li> 
-                    <a href = "https://example.com"> https link </a>   </li>
-                    <li>
-                    <a href = "ftp://example.com/flies/file.txt" > ftl link </a>   </li>
-                    <li>
-                    <a href = "ftp://admin:poggers@example.com/files/file.txt"> ftl link </a>   </li>
-                    <li>
-                    <a href = "https://example.com#about"> marker </a> </li>
-                    <li>
-                    <a href = "#marker"> site marker </a> </li>
-                    <li>
-                    <a href = "https://https://www.youtube.com/watch?v=ynQdJe48bkE&t=10s"> parameter </a> </li>
-                    <li>
-                    <ul lang = "ru">
-                        <li>
-                        <a href = "https://en.wikipedia.org/wiki/Main_Page" title = "Основная страница"> Основная страница </a> </li>
-                        <li>
-                        <a href = "https://en.wikipedia.org/wiki/Wikipedia:Contents" title = "Информация о содержании"> Контент </a> </li>
-                        <li>
-                        <a href = "https://en.wikipedia.org/wiki/Wikipedia:About" title = "Информация о самой Википедии"> О нас </a> </li>
-                        <li>
-                        <a href = "https://en.wikipedia.org/wiki/Wikipedia:Contact_us" title = "Возможности связаться с Википедией"> Связаться с нами </a> </li>
-                    </ul> </li>
-                    <li>
-                    <a> broken link </a> </li>
-                    <li>
-                    <a href = " "> empty link </a> </li>
-                    <li>
-                    <a href ="http://example.com" rel = "nofollow"> search engine can't follow link </a> </li>
-                    <li>
-                    <a href = "http://example.com" rel ="noindex"> search engine hidden link </a> </li> 
-                    <li>
-                    <p lang = "ru">
-                        <a href = "http://example.com"> конекстная ссылка </a> 
-                        </p> </li>
-                    <li>
-                    <a href = "https://pubchem.ncbi.nlm.nih.gov/compound/2_4_6-Trinitrotoluene"> 
-                    <img src = "1200px-Trinitrotoluene.png" width="50" 
-                    height="50" alt="TNT"> </a> </li>
-                    <li>
-                    <img src="1200px-Trinitrotoluene.png" width="80%" height="480" 
-                    alt="Site navigation" usemap="#Navigation">
-                        <map name = "Navigation">
-                        <area coords = "300,150,40" shape = "circle" 
-                        href = "https://pubchem.ncbi.nlm.nih.gov/compound/2_4_6-Trinitrotoluene" alt = "Circle area">
-                        <area shape = "rect" coords = "50,50,150,150" 
-                        href = "https://en.wikipedia.org/wiki/TNT" alt = "tiny rect area">
-                        </map> </li>
-                    <li> 
-                    <a href = "cringe.html"> relative cur catalog </a> </li>	 
-                    <li>
-                    <a href = "about/ht.html"> relative about catalog </a> </li>
-                    <li>
-                    <a href = "../doc.html"> one folder up relative </a> </li>
-                    <li>
-                    <a href = "../../doc.html"> 2 folders up relative </a> </li>
-                    <li>
-                    <a href = "/about.html"> main shortened </a> </li>
-                    <li> 
-                    <a href = "/contacts/contaclist.html"> shortened internal link </a> </li>
+                  <li> 
+                    <a href="http://example.com"> Site </a>   
+                  </li>
+                  <li> 
+                    <a href="https://example.com"> https link </a>   
+                  </li>
+                  <li>
+                    <a href="ftp://example.com/flies/file.txt" > ftl link </a>   
+                  </li>
+                  <li>
+                    <a href="ftp://admin:poggers@example.com/files/file.txt"> ftl link </a>   
+                  </li>
+                  <li>
+                    <a href="https://example.com#about"> marker </a> 
+                  </li>
+                  <li>
+                    <a href="#marker"> site marker </a> 
+                  </li>
+                  <li>
+                    <a href="https://https://www.youtube.com/watch?v=ynQdJe48bkE&t=10s"> parameter </a> 
+                  </li>
+                  <li>
+                    <ul lang="ru">
+                      <li>
+                        <a href="https://en.wikipedia.org/wiki/Main_Page" title="Основная страница"> Основная страница </a> 
+                      </li>
+                      <li>
+                        <a href="https://en.wikipedia.org/wiki/Wikipedia:Contents" title="Информация о содержании"> Контент </a> 
+                      </li>
+                      <li>
+                        <a href="https://en.wikipedia.org/wiki/Wikipedia:About" title="Информация о самой Википедии"> О нас </a> 
+                      </li>
+                      <li>
+                        <a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us" title="Возможности связаться с Википедией"> Связаться с нами </a> 
+                      </li>
+                    </ul> 
+                  </li>
+                  <li>
+                    <a> broken link </a> 
+                  </li>
+                  <li>
+                    <a href=" "> empty link </a> 
+                  </li>
+                  <li>
+                    <a href="http://example.com" rel="nofollow"> search engine can't follow link </a> 
+                  </li>
+                  <li>
+                    <a href="http://example.com" rel="noindex"> search engine hidden link </a> 
+                  </li> 
+                  <li>
+                    <p lang="ru">
+                      <a href="http://example.com"> конекстная ссылка </a> 
+                    </p> 
+                  </li>
+                  <li>
+                    <a href="https://pubchem.ncbi.nlm.nih.gov/compound/2_4_6-Trinitrotoluene"> 
+                    <img src="1200px-Trinitrotoluene.png" width="50" height="50" alt="TNT"/> 
+                    </a> 
+                  </li>
+                  <li>
+                  <img src="1200px-Trinitrotoluene.png" width="420" height="420" alt="Site navigation" usemap="#Navigation"/>
+                    <map name = "Navigation">
+                      <area coords="300,150,40" shape="circle" href="https://pubchem.ncbi.nlm.nih.gov/compound/2_4_6-Trinitrotoluene" alt="Circle area"/>
+                      <area shape="rect" coords="50,50,150,150" href="https://en.wikipedia.org/wiki/TNT" alt="tiny rect area"/>
+                    </map> 
+                  </li>
+                  <li> 
+                    <a href="cringe.html"> relative cur catalog </a> 
+                  </li>	 
+                  <li>
+                    <a href="about/ht.html"> relative about catalog </a> 
+                  </li>
+                  <li>
+                    <a href="../doc.html"> one folder up relative </a> 
+                  </li>
+                  <li>
+                    <a href="../../doc.html"> 2 folders up relative </a> 
+                  </li>
+                  <li>
+                    <a href="/about.html"> main shortened </a> </li>
+                  <li> 
+                    <a href="/contacts/contaclist.html"> shortened internal link </a> 
+                  </li>
                 </ul>
+              </div>
+              <div id="tableblock" class="my-2 order-2 order-md-1 w-100">
+              <h1 class="titles" id="tabletitle"> Table </h1>
+                <table>
+                  <tr>
+                    <th>Колонка 1</th>
+                    <th>Колонка 2</th>
+                    <th>Колонка 3</th> 
+                  </tr>
+                  <tr>
+                    <td colspan="2" class="to">Ячейка 11 объединенная с 12</td>
+                    <td class="to"> Ячейка 13 </td>
+                  </tr>
+                  <tr>
+                    <td class="te">Ячейка 21</td>
+                    <td colspan="2" class="te">Ячейка 22 объединенная с 23</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class="to">Ячейка 31 объединенная с 32</td>
+                    <td class="to"> Ячейка 33 </td>
+                  </tr>
+                  <tr>
+                    <td class="te" colspan = "3"> 414243 </td>
+                  <tr>
+                    <td class="to"> 51 </td>
+                    <td class="to"> 55 </td>
+                    <td class="to"> 53 </td>
+                </table>
                 </div>
+                <div id="formblock" class="order-1 order-md-2 w-100">
+                <h1 class="titles my-2" id="linktitle"> Form </h1>
+                <form action="/" method="POST">
+                  <label>
+                    Имя:<br />
+                    <input name="field-name-1" />
+                  </label><br />
+                  <label>
+                    email:<br />
+                    <input name="field-email" type="email" />
+                  </label><br />
+                  <label>
+                    Дата рождения :<br />
+                    <input name="field-date" type="date" />
+                  </label><br />
+                  Пол:
+                  <label> 
+                    <input type="radio" checked="checked" name="radio-group-1" value = "male" />
+                    Мужчина 
+                  </label>
+                  <label>
+                      <input type="radio" name="radio-group-1" value = "female" />
+                      Женщина 
+                    </label><br />
+                  Кол-во конечностей: <br/> 
+                  <label>
+                      <input type="radio" checked="checked"
+                            name="radio-group-2" value = "limbCou1" />
+                            1 </label><br/>
+                        <label><input type="radio"
+                            name="radio-group-2" value = "limbCou2" />
+                            2 </label><br />
+                            <label><input type="radio"
+                            name="radio-group-2" value = "limbCou3" />
+                            3 </label><br />
+                            <label><input type="radio"
+                            name="radio-group-2" value = "limbCou4" />
+                            4 </label><br />
+                            <label><input type="radio"
+                            name="radio-group-2" value = "limbCou5" />
+                            5 </label><br />
+                    <label>
+                            Сверхспособности:
+                            <br/>
+                            <select name="field-name-4[]"
+                            multiple="multiple">
+                            <option value="immortality">Бессмертие</option>
+                            <option value="walkthroughwalls" >Хождение сквозь стены</option>
+                            <option value="levitation">Левитация</option>
+                            </select>
+                        </label><br />
+                    <label>
+                    Биография: <br/>
+                    <textarea name = "bio-field"> </textarea>
+                    </label> <br/>
+                    <label>
+                    <input type = "checkbox" name = "checkbox"> С контрактом ознакомлен(а) </label> <br/>
+                    Отправить: <br/>
+                    <input type="submit" value="Отправить" />
+                </form>
+              </div>
             </div>
+          </div>
         </div>
-        <div class = "row">
-            <div class = "col">
-                <div class = "flexblockform">
-                    <div class = "row">
-                        <div class ="col">
-                            <div id = "tableblock">
-                            <h1 class ="titles" id ="tabletitle"> Table </h1>
-                            <table>
-                                <tr>
-                                    <th>Колонка 1</th>
-                                    <th>Колонка 2</th>
-                                    <th>Колонка 3</th> 
-                                </tr>
-                                <tr>
-                                    <td colspan="2" class="to">Ячейка 11 объединенная с 12</td>
-                                    <td class="to"> Ячейка 13 </td>
-                                </tr>
-                                <tr>
-                                    <td class="te">Ячейка 21</td>
-                                    <td colspan="2" class="te">Ячейка 22 объединенная с 23</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" class="to">Ячейка 31 объединенная с 32</td>
-                                    <td class="to"> Ячейка 33 </td>
-                                </tr>
-                                <tr>
-                                    <td class="te" colspan = "3"> 414243 </td>
-                                <tr>
-                                    <td class="to"> 51 </td>
-                                    <td class="to"> 55 </td>
-                                    <td class="to"> 53 </td>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                <div class = "row">
-                    <div class = "col">
-                        <div id = "formblock">
-                        <h1 class ="titles" id="linktitle"> Form </h1>
-                        <form action ="/" method = "POST">
-                            <label>
-                                    Имя:<br />
-                                    <input name="field-name-1" />
-                                </label><br />
-                            <label>
-                                    email:<br />
-                                    <input name="field-email"
-                                    type="email" />
-                                </label><br />
-                            <label>
-                                    Дата рождения :<br />
-                                    <input name="field-date"
-                                    type="date" />
-                                </label><br />
-                            Пол: <label><input type="radio" checked="checked"
-                                    name="radio-group-1" value = "male" />
-                                    Мужчина </label>
-                                <label><input type="radio"
-                                    name="radio-group-1" value = "female" />
-                                    Женщина </label><br />
-                            Кол-во конечностей: <br/> <label><input type="radio" checked="checked"
-                                    name="radio-group-2" value = "limbCou1" />
-                                    1 </label><br/>
-                                <label><input type="radio"
-                                    name="radio-group-2" value = "limbCou2" />
-                                    2 </label><br />
-                                    <label><input type="radio"
-                                    name="radio-group-2" value = "limbCou3" />
-                                    3 </label><br />
-                                    <label><input type="radio"
-                                    name="radio-group-2" value = "limbCou4" />
-                                    4 </label><br />
-                                    <label><input type="radio"
-                                    name="radio-group-2" value = "limbCou5" />
-                                    5 </label><br />
-                            <label>
-                                    Сверхспособности:
-                                    <br/>
-                                    <select name="field-name-4[]"
-                                    multiple="multiple">
-                                    <option value="immortality">Бессмертие</option>
-                                    <option value="walkthroughwalls" >Хождение сквозь стены</option>
-                                    <option value="levitation">Левитация</option>
-                                    </select>
-                                </label><br />
-                            <label>
-                            Биография: <br/>
-                            <textarea name = "bio-field"> </textarea>
-                            </label> <br/>
-                            <label>
-                            <input type = "checkbox" name = "checkbox"> С контрактом ознакомлен(а) </label> <br/>
-                            Отправить: <br/>
-                            <input type="submit" value="Отправить" />
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>   
+      </div>
+      <div class="col-0 col-md-1 my-2">
+      </div>
     </div>
-        <div class = "row">
-            <div class = "col">
-                <footer>
-                    <p> Меликов Р.М </p>
-                </footer>
-            </div>
-        </div>
+    <div class = "row">
+      <div class = "col my-2">
+        <footer>
+          <p> Меликов Р.М </p>
+        </footer>
+      </div>
     </div>
+  </div>
 </body>
 </html>
