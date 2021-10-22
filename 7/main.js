@@ -1,25 +1,25 @@
-$(document).ready(function() {
-    console.log( "ready!" );
+$(document).ready(function () {
+    console.log("ready!");
     $('.imgslide').slick({
-        infinite: true,
+        adaptiveHeight: true,
         dots: true,
-        slidesToShow: 4,
-        slidesToScroll: 4,
+        infinite: true,
+        mobileFirst: true,
         responsive: [
-            {
-                breakpoint: 1000,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4
-                }
-            },
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
+                    slidesToScroll: 4,
+                    slidesToShow: 4
+                }
+            },
+            {
+                breakpoint: 200,
+                settings: {
+                    slidesToScroll: 2,
+                    slidesToShow: 2
                 }
             }
         ]
     });
-  }); 
+});

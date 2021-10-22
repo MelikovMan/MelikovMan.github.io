@@ -1,0 +1,9 @@
+.imgslide img{
+    margin: 0 auto;
+   }
+   .container-fluid{
+       background-color: rgb(68, 68, 204);  
+   }
+   body{
+    background-color: black; 
+   }
