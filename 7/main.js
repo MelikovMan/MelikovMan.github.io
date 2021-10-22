@@ -1,6 +1,6 @@
 $(document).ready(function () {
     console.log("ready!");
-    $('.imgslide').slick({
+    $(".imgslide").slick({
         adaptiveHeight: true,
         dots: true,
         infinite: true,
