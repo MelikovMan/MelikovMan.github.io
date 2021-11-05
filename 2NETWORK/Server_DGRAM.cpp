@@ -5,7 +5,7 @@
 #include <winsock2.h>
 #include <windows.h>
 #include <string>
-#include "Forms.h"
+#include "cliservrep.h"
 #pragma comment (lib, "Ws2_32.lib")  
 using namespace std;
 #define SRV_PORT 1234    

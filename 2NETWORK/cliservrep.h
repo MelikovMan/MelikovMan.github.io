@@ -6,12 +6,8 @@ enum GRANT_TYPE {
 	GRANT_TYPE_INCREASED,
 };
 struct ClientForm {
-	std::string lastname;
 	int grant;
-	int id;
 };
 struct ServerForm {
-	std::string lastname;
 	GRANT_TYPE grant;
-	int id;
 };
