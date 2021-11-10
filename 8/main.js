@@ -17,8 +17,17 @@ chl[0].addEventListener("change", (event)=>
 let form = document.getElementById("contact")
 form.addEventListener("submit", function(event){
   event.preventDefault();
-  fetch("https://formcarry.com/s/KAkRhB37_6s",{method:"POST", body:new FormData(form)})
-  .then((response)=>alert("Успешная отправка"),(error)=>alert("Ошибка отправки"));
+  fetch("https://formcarry.com/s/KAkRhB37_6s",{method:"POST",
+  headers: new Headers({"Content-type": "application/json", 'Accept': 'application/json'}), 
+  body: JSON.stringify(Object.fromEntries(new FormData(form)))})
+  .then(function(response){
+      if (!response.ok) throw new Error(response.status);
+      return response;
+  })
+  .then((response)=>{alert("Успешная отправка")
+    console.log(response.text());})
+  .catch((error)=>{alert("Ошибка отправки");
+    console.log(error);});
   /*let xhrhttml = new XMLHttpRequest();
   let FD = new FormData(event.target);
   xhrhttml.addEventListener("load", ()=>alert("Успешная отправка"))
