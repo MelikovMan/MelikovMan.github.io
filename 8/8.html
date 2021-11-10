@@ -7,38 +7,34 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'/>
     <title>Задание 8</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
     <script src='main.js' defer></script>
   </head>
   <body>
-  <button id="showbutton" onclick="return false;"> Show Form </button>
-    <div class="container-fluid">
-      <div class="row">
-          <div class="d-none d-md-block col-md-4">
-          </div>
-          <div class="col-4 col-md-2">
-              <form method="POST">
-                <label>
-                Имя: <br/>
-                <input id="field1" type="text"/>
-                </label> <br/>  
-                <label>
-                email:<br />
-                <input name="field-email" value="test@example.com" type="email" />
-                </label><br />
-                <label>
-                Message:<br/>
-                    <textarea name="fieldmessage"></textarea>
-                </label> <br/>
-                <label>
-                    <input name="check" type="checkbox"/>
-                    I agree with terms of service
-                </label> </br>
-                <input type="submit" name="subbutton"/> Send!
-              </form>
-          </div>
-          <div class="col-6 col-md-4">
-          </div>
-      </div>  
+  <button id="showbutton"> Show Form </button>
+  <div id="wrapper">
+    <div class="modalcontent">
+      <span id="close"> X </span>
+      <form id="contact" name="contact" method="POST" accept-charset="UTF-8">
+        <label>
+        Имя: <br/>
+        <input id="field1" type="text" name="txt"/>
+        </label> <br/>  
+        <label>
+        email:<br />
+        <input name="field-email" value="test@example.com" type="email" name="mail"/>
+        </label><br />
+        <label>
+         Message:<br/>
+          <textarea name="fieldmessage"></textarea>
+        </label> <br/>
+        <label>
+          <input name="check" type="checkbox"/>
+           I agree with terms of service
+        </label> </br>
+        <input type="submit" name="subbutton" disabled/> Send!
+        </form>
     </div>
+  </div>
   </body>
 </html>
