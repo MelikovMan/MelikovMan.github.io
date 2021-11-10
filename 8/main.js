@@ -24,7 +24,7 @@ form.addEventListener("submit", function(event){
       if (!response.ok) throw new Error(response.status);
       return response;
   })
-  .then((response)=>{alert("Успешная отправка")
+  .then((response)=>{alert("Успешная отправка");
     console.log(response.text());})
   .catch((error)=>{alert("Ошибка отправки");
     console.log(error);});
