@@ -8,7 +8,7 @@ let wra = document.getElementById("wrapper");
 let x = document.getElementById("close");
 let fiel = document.querySelectorAll(".fields");
 fiel.forEach((element) => {
-    element.value = localStorage.getItem(element.name)
+    element.value = localStorage.getItem(element.name);
     element.addEventListener("blur", 
     (event)=>localStorage.setItem(event.target.name, event.target.value));
 });
@@ -50,6 +50,7 @@ form.addEventListener("submit", function(event){
     console.log(response.text());})
   .catch((error)=>{alert("Ошибка отправки");
     console.log(error);});
+    fiel.forEach((element) => {element.value = ""});
     localStorage.clear();
   /*let xhrhttml = new XMLHttpRequest();
   let FD = new FormData(event.target);
