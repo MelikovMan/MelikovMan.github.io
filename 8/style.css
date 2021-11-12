@@ -7,21 +7,19 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.5);
-    animation: modal 0.4s alternate ease;
     }
-    .modalcontent {
+.modalcontent {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     color: brown;
 }
-
-    #contact {
+#contact {
     padding: 10px;
     background-color: cadetblue;
 }
-    #close{
+#close{
         float: right;
         cursor: pointer;
         margin-right: 3%;
