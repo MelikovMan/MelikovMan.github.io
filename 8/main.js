@@ -1,28 +1,34 @@
 function closeModal(wrapper){
     wrapper.style.display = "none";
-    history.pushState({"formtoggle": false});
+    history.pushState({"formtoggle": false},"","8.html");
+}
+function openModal(wrapper){
+  wrapper.style.display = "flex";
+  history.pushState({"formtoggle": true}, "", "#form");
 }
 window.addEventListener("DOMContentLoaded", function(event){
 let but = document.getElementById("showbutton");
 let wra = document.getElementById("wrapper");
 let x = document.getElementById("close");
 let fiel = document.querySelectorAll(".fields");
-fiel.forEach((element) => {
+fiel.forEach((element) => {                                                       // LOCAL STORAGE REALIZATION
     element.value = localStorage.getItem(element.name);
     element.addEventListener("blur", 
-    (event)=>localStorage.setItem(event.target.name, event.target.value));
+    (event)=>localStorage.setItem(event.target.name, event.target.value));        
 });
-x.addEventListener("click",(event)=>{closeModal(wrapper);})
-but.onclick = function() {
-  wra.style.display = "flex";
-  history.pushState({"formtoggle": true}, "", "#form")};
-window.onclick = function(event) {
+x.addEventListener("click",(event)=>{closeModal(wrapper);})                       // CLOSES WINDOW ON X HIT
+but.onclick = function(){
+  openModal(wra);
+};
+window.onclick = function(event) {                                                //CLOSES WINDOW ON CLICKING OUTSIDE IT
   if (event.target == wra) 
   closeModal(wrapper);
  };
-window.addEventListener("popstate",(event)=>
-{(event.state.formtoggle) ? wra.style.display="none": wra.style.display="flex";})
-window.addEventListener("keydown",function(event){
+history.pushState({"formtoggle": false},"","8.html");                             // HISTORY API REALIZATION
+window.addEventListener("popstate",(event) => {
+  (event.state.formtoggle)? wra.style.display = "flex" : wrapper.style.display = "none";
+  });
+window.addEventListener("keydown",function(event){                                //CLOSES WINDOW ON ESC HIT
     if(wra.style.display!="none")
     switch(event.key){
         case "Escape":
@@ -35,9 +41,9 @@ window.addEventListener("keydown",function(event){
 let chl = document.getElementsByName("check");
 let b = document.getElementsByName("subbutton");
 chl[0].addEventListener("change", (event)=>
-{(event.target.checked)? b[0].disabled=false: b[0].disabled=true;})
+{(event.target.checked)? b[0].disabled=false: b[0].disabled=true;})               //BUTTON IS ENABLED ONLY IF YOU HAVE TERMS CHECKMARK CHECKED
 let form = document.getElementById("contact");
-form.addEventListener("submit", function(event){
+form.addEventListener("submit", function(event){                                  //AJAX USING FETCH
   event.preventDefault();
   fetch("https://formcarry.com/s/KAkRhB37_6s",{method:"POST",
   headers: new Headers({"Content-type": "application/json", 'Accept': 'application/json'}), 
