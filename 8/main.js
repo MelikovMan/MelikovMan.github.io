@@ -1,4 +1,3 @@
-
 let modal = {
   closeModal: ()=>{
     this.wrapper.style.display = "none";
@@ -44,8 +43,9 @@ window.addEventListener("DOMContentLoaded", function(event){
       }
   }
   });
+  (modal.fields.item(3).checked)? (modal.submitButton.disabled=false) : (modal.submitButton.disabled=true);
   modal.fields.item(3).addEventListener("change", (event)=>
-  {(event.target.checked)? (modal.submitButton.disabled=false) : (modal.submitButton.disabled=true);})
+  {(event.target.checked)? (modal.submitButton.disabled=false) : (modal.submitButton.disabled=true);});
   modal.postForm.addEventListener("submit", function(event){  //AJAX USING FETCH
       event.preventDefault();
       fetch("https://formcarry.com/s/KAkRhB37_6s",
