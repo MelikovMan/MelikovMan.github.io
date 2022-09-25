@@ -1,6 +1,5 @@
 ﻿// RotationMethod.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
-
 #include <iostream>
 #include <vector>
 #include <cmath>
@@ -18,10 +17,17 @@ void printMatrix(vector<vector<double>> mat) {
     cout << "_________________________" << endl;
     cout << endl;
 }
-void rotationMethod(vector<double>::iterator first, vector<double>::iterator current) {
+void rotationMethod(vector<double>::iterator first, vector<double>::iterator current, vector<double>::iterator firste, vector<double>::iterator currente) {
     double norm = sqrt(pow(*first, 2) + pow(*current, 2));
-    double m1 = (*first) / norm;
-    double m2 = (*current) / norm;
+    double c1 = (*first) / norm;
+    double s1 = (*current) / norm;
+    double a1, a2;
+    for (; first != firste && current != currente; first++, current++) {
+        a1 = *first;
+        a2 = *current;
+        *first = ((c1 * a1) + s1 * a2);
+        *current = ((-s1) * (a1) + c1 * (a2));
+    }
 }
 int main()
 {
@@ -31,6 +37,8 @@ int main()
     vector<vector<double>> allb;
     vector<vector<double>> all;
     vector<double> row;
+    vector<double> solution (N, 0);
+    vector<double> b;
     double x;
     for (int j = 0; j < N; j++) {            // Ввод строки матрицы Ab
         cout << "Row" << endl;
@@ -68,12 +76,35 @@ int main()
         vector<double> sample = *supit;                   //sample - строка-вычитаемое
         vector<double>::iterator it = sample.begin() + i;
         supit++;
+        vector<double>::iterator cur = supit->begin() + i;
         for (; supit != allb.end(); supit++) {            //цикл всех строк >i по индексу                 //выбор числителя
             it = sample.begin() + i;
-
-        }// выбор i столбца i строки для обхода строки начиная с i столбца
+            cur = supit->begin() + i;
+            rotationMethod(it, cur, sample.end(), supit->end());
+        }
+        printMatrix(allb);
+    }
+    for (int i = N - 1; i >= 0; i--) {
+        double intersum = 0;
+        for (int j = 0; j < N; j++) {
+            intersum += allb.at(i).at(j) * solution.at(j);
+        }
+        solution.at(i) = (allb.at(i).at(N) - intersum) / (allb.at(i).at(i));
+    }
+    cout << "Solution: " << endl;
+    for (vector<double>::iterator it = solution.begin(); it != solution.end(); it++) {
+        cout << "|" << *it << "|" << endl;
+    }
+    vector<double> deltas;
+    cout << "Deltas: " << endl;
+    for (int r = 0; r < N; r++) { //Расчет погрешности
+        double ts = 0;
+        for (int c = 0; c < N; c++) ts += all.at(r).at(c) * solution.at(c);
+        deltas.push_back(ts - all.at(r).at(N));
+        cout << "| " << deltas.at(r) << " |" << endl;
     }
 }
+
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
 
