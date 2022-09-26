@@ -6,6 +6,33 @@
 #include <iostream>
 
 using namespace std;
+void drawCircleFillFan(float cx, float cy, float r, int num_segments)
+{
+	float theta = 3.1415926 * 2 / float(num_segments);
+	float tangetial_factor = tanf(theta);//calculate the tangential factor 
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	float radial_factor = cosf(theta);//calculate the radial factor 
+
+	float x = r;//we start at angle = 0 
+
+	float y = 0;
+
+	glBegin(GL_TRIANGLE_STRIP);
+	for (int ii = 0; ii < num_segments; ii++)
+	{
+		glVertex2f(x + cx, y + cy);//output vertex 
+
+		float tx = -y;
+		float ty = x;
+
+		x += tx * tangetial_factor;
+		y += ty * tangetial_factor;
+
+		x *= radial_factor;
+		y *= radial_factor;
+	}
+	glEnd();
+}
 void drawCircleFill(float cx, float cy, float r, int num_segments)
 {
 	float theta = 3.1415926 * 2 / float(num_segments);
@@ -71,6 +98,14 @@ void render_loop(GLfloat ww, GLfloat wh)
 		((rgba >> 8) & 0xff) / 255.0f,
 		(rgba & 0xff) / 255.0f);; //green
 	drawCircleFill(w/2+x+35, wh/2+35, cresrad, 360);
+	glColor4f(0, 0, 0, 1);
+	drawCircleFill(w / 2 + x + 60, wh / 2 + 50, cresrad /3, 5);
+	glColor4f(1, 1, 1, 1);
+	drawCircleFill(w / 2 + x + 60, wh / 2 + 50, cresrad / 6, 5);
+	/*glBegin(GL_TRIANGLE_FAN) {
+	
+	}
+	*/
 
 }
 
