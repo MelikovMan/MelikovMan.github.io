@@ -28,11 +28,56 @@
         </select>
         </label><br />
         <label>
-          <input name="check" type="checkbox" class="fields"/>
-           I agree with terms of service
+          <div id="captcha-container">
+           </div>
         </label> <br/>
-        <input type="submit" name="subbutton" id="submitbutton"/> Send!
+        <input type="submit" name="subbutton" id="submitbutton" disabled/> Send!
         </form>
   </div>
+  <script
+  src="https://smartcaptcha.yandexcloud.net/captcha.js?render=onload&onload=smartCaptchaInit"
+  defer
+></script>
+
+<script>
+  function callback(token) {
+    if (token) {
+      document
+        .getElementById('submitbutton')
+        .removeAttribute('disabled');
+    } else {
+      document
+        .getElementById('submitbutton')
+        .setAttribute('disabled', '1');
+    }
+  }
+
+  function smartCaptchaInit() {
+    if (!window.smartCaptcha) {
+      return;
+    }
+
+    window.smartCaptcha.render('captcha-container', {
+      sitekey: ysc1_KWfViJ7g3clWJ3qabNiv6f0mo95RHEEmkSuGtiZa89fc6718,
+      callback: callback,
+    });
+  }
+
+  function smartCaptchaReset() {
+    if (!window.smartCaptcha) {
+      return;
+    }
+
+    window.smartCaptcha.reset();
+  }
+
+  function smartCaptchaGetResponse() {
+    if (!window.smartCaptcha) {
+      return;
+    }
+
+    var resp = window.smartCaptcha.getResponse();
+  }
+</script>
   </body>
 </html>
