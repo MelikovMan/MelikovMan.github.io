@@ -1,0 +1,13 @@
+#the-canvas{
+    display:block;
+    border: 4px solid black;
+}
+
+#contact{
+    display: flex;
+    flex-direction: column;
+}
+#contact label{
+    display: block;
+    margin: auto;
+}

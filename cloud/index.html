@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset='utf-8'/>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'/>
+    <title>Расознование</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src='main.js' defer></script>
+  </head>
+  <body>
+  <h1 id="showbutton"> Расознование текста </h1>
+  <div id="wrapper">
+    <form id="contact" name="contact" method="POST" accept-charset="UTF-8">
+        <label id="canvas-wrapper">
+            Рисунок:</br>
+            <canvas
+            id="the-canvas" 
+             width="620" height="380">
+           </canvas>
+        </label> <br/>
+        <button id="clear">Отчистить рисунок</button>  
+        <label>
+        Язык:<br />
+        <select name="field-name-4[]">
+          <option value="en">Английский</option>
+          <option value="ru" >Русский</option>
+        </select>
+        </label><br />
+        <label>
+          <input name="check" type="checkbox" class="fields"/>
+           I agree with terms of service
+        </label> <br/>
+        <input type="submit" name="subbutton" id="submitbutton"/> Send!
+        </form>
+  </div>
+  </body>
+</html>
