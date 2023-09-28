@@ -47,11 +47,9 @@ window.addEventListener('DOMContentLoaded',(e)=>{
       form.addEventListener("submit",(e)=>{
         e.preventDefault();
           let select = document.getElementById("lang-field");
-          let b = canvas.toDataURL().replace('data:', '').replace(/^.+,/, '');
-          let l = select.options[select.selectedIndex].value;
           let obj = {
-              base64 = b,
-              language = l
+              base64: canvas.toDataURL().replace('data:', '').replace(/^.+,/, ''),
+              language: select.options[select.selectedIndex].value
           }
           document
               .getElementById('submitbutton')
@@ -77,7 +75,7 @@ window.addEventListener('DOMContentLoaded',(e)=>{
                   response.json()
               }).then((response) => console.log(response))
               .catch((error) => {
-                  alert("Fail");
+                  alert("Failure");
                   console.log(error);
               }).finally(() => document
                   .getElementById('submitbutton')
