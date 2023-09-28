@@ -46,8 +46,42 @@ window.addEventListener('DOMContentLoaded',(e)=>{
       const form = document.getElementById("contact")
       form.addEventListener("submit",(e)=>{
         e.preventDefault();
-        console.log(canvas.toDataURL().replace('data:', '')
-        .replace(/^.+,/, ''));
+          let select = document.getElementById("lang-field");
+          let obj = {
+              base64 = canvas.toDataURL().replace('data:', '')
+                  .replace(/^.+,/, ''),
+              language = select.options[select.selectedIndex].value
+          }
+          document
+              .getElementById('submitbutton')
+              .setAttribute('disabled', '1');
+          fetch("https://functions.yandexcloud.net/d4et655ongl4sskem62s",
+              {
+                  method: "POST",
+                  headers:
+                  {
+                      "Content-type": "application/json",
+                      "Accept": "application/json"
+                  },
+                  body: JSON.stringify(obj)
+              })
+              .then(function (response) {
+                  if (!response.ok) {
+                      throw new Error(response.status);
+                  }
+                  return response;
+              })
+              .then((response) => {
+                  alert("Успешная отправка");
+                  response.json()
+              }).then((response) => console.log(response))
+              .catch((error) => {
+                  alert("Ошибка отправки");
+                  console.log(error);
+              }).finally(() => document
+                  .getElementById('submitbutton')
+                  .removeAttribute('disabled'));
+
       })     
 
 
