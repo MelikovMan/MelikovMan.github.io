@@ -48,7 +48,7 @@ window.addEventListener('DOMContentLoaded',(e)=>{
         e.preventDefault();
           let select = document.getElementById("lang-field");
           let b = canvas.toDataURL().replace('data:', '').replace(/^.+,/, '');
-          let l = select.options[select.selectedIndex].value
+          let l = select.options[select.selectedIndex].value;
           let obj = {
               base64 = b,
               language = l
@@ -73,11 +73,11 @@ window.addEventListener('DOMContentLoaded',(e)=>{
                   return response;
               })
               .then((response) => {
-                  alert("Успешная отправка");
+                  alert("Success");
                   response.json()
               }).then((response) => console.log(response))
               .catch((error) => {
-                  alert("Ошибка отправки");
+                  alert("Fail");
                   console.log(error);
               }).finally(() => document
                   .getElementById('submitbutton')
