@@ -47,10 +47,11 @@ window.addEventListener('DOMContentLoaded',(e)=>{
       form.addEventListener("submit",(e)=>{
         e.preventDefault();
           let select = document.getElementById("lang-field");
+          let b = canvas.toDataURL().replace('data:', '').replace(/^.+,/, '');
+          let l = select.options[select.selectedIndex].value
           let obj = {
-              base64 = canvas.toDataURL().replace('data:', '')
-                  .replace(/^.+,/, ''),
-              language = select.options[select.selectedIndex].value
+              base64 = b,
+              language = l
           }
           document
               .getElementById('submitbutton')
