@@ -68,7 +68,7 @@ window.addEventListener('DOMContentLoaded',(e)=>{
               .then((response) => {
                   alert("Success");
                   return response.json();
-              }).then(([results[textDetection]]) => console.log(textDetection) 
+              }).then(([results]) => console.log(results.textDetection) 
               .catch((error) => {
                   alert("Failure");
                   console.log(error);
