@@ -86,10 +86,10 @@ window.addEventListener('DOMContentLoaded',(e)=>{
                       let wrap = document.getElementById("wrapper");
                       let textNode = document.createElement("div");
                       textNode.id = "recognized-text";
-                      textNode.innerHTML = (textarr.length === 0) ? "Не опознан!" : textarr.join(" ");
+                      textNode.innerHTML = (textarr.length === 0) ? "Не опознан!" : `Опознанный текст: ${textarr.join(" ")}`;
                       wrap.appendChild(textNode)
                   }
-                  else textNodeQuery.innerHTML = (textarr.length === 0) ? "Не опознан!" : textarr.join(" ");
+                  else textNodeQuery.innerHTML = (textarr.length === 0) ? "Не опознан!" : `Опознанный текст: ${textarr.join(" ")}`;
                   
 		      }) 
               .catch((error) => {
