@@ -69,9 +69,29 @@ window.addEventListener('DOMContentLoaded',(e)=>{
                   alert("Success");
                   return response.json();
               }).then((results) => {
-		console.log(results);
-		console.log(results.results[0].results[0].textDetection);
-		}) 
+		          console.log(results);
+                  console.log(results.results[0].results[0].textDetection);
+                  const textarr = new Array();
+                  const textResults = results.results[0].results[0].textDetection;
+                  textResults.pages?.forEach((page) =>
+                      page.blocks?.forEach((block) =>
+                          block.lines?.forEach((line) =>
+                              line.words?.forEach((word) =>
+                                  textarr.push(word.text))
+                          )
+                      )
+                  );
+                  let textNodeQuery = document.getElementById("recognized-text");
+                  if (!textNodeQuery) {
+                      let wrap = document.getElementById("wrapper");
+                      let textNode = document.createElement("div");
+                      textNode.id = "recognized-text";
+                      textNode.innerHTML = (textarr.length === 0) ? "Не опознан!" : textarr.join(" ");
+                      wrap.appendChild(textNode)
+                  }
+                  else textNodeQuery.innerHTML = (textarr.length === 0) ? "Не опознан!" : textarr.join(" ");
+                  
+		      }) 
               .catch((error) => {
                   alert("Failure");
                   console.log(error);
