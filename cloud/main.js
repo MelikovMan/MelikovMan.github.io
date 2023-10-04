@@ -57,11 +57,6 @@ window.addEventListener('DOMContentLoaded',(e)=>{
           fetch("https://functions.yandexcloud.net/d4et655ongl4sskem62s",
               {
                   method: "POST",
-                  headers:
-                  {
-                      "Content-type": "application/json",
-                      "Accept": "application/json"
-                  },
                   body: JSON.stringify(obj)
               })
               .then(function (response) {
