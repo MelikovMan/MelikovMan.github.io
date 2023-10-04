@@ -70,7 +70,7 @@ window.addEventListener('DOMContentLoaded',(e)=>{
                   return response.json();
               }).then((results) => {
 		console.log(results);
-		console.log(results.results);
+		console.log(results.results[0].results[0].textDetection);
 		}) 
               .catch((error) => {
                   alert("Failure");
