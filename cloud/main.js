@@ -68,7 +68,10 @@ window.addEventListener('DOMContentLoaded',(e)=>{
               .then((response) => {
                   alert("Success");
                   return response.json();
-              }).then((results) => console.log(results[0])) 
+              }).then((results) => {
+		console.log(results);
+		console.log(results[0]);
+		}) 
               .catch((error) => {
                   alert("Failure");
                   console.log(error);
