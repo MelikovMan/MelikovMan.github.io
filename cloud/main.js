@@ -67,7 +67,7 @@ window.addEventListener('DOMContentLoaded',(e)=>{
               })
               .then((response) => {
                   alert("Success");
-                  response.json()
+                  response.text()
               }).then((response) => console.log(response))
               .catch((error) => {
                   alert("Failure");
