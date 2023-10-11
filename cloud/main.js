@@ -69,8 +69,8 @@ window.addEventListener('DOMContentLoaded',(e)=>{
                   alert("Success");
                   return response.json();
               }).then((results) => {
-		          console.log(results);
-                  console.log(results.results[0].results[0].textDetection);
+		          //console.log(results);
+                  //console.log(results.results[0].results[0].textDetection);
                   const textarr = new Array();
                   const textResults = results.results[0].results[0].textDetection;
                   textResults.pages?.forEach((page) =>
@@ -83,13 +83,21 @@ window.addEventListener('DOMContentLoaded',(e)=>{
                   );
                   let textNodeQuery = document.getElementById("recognized-text");
                   if (!textNodeQuery) {
+                      let link = document.createElement("a");
                       let wrap = document.getElementById("wrapper");
                       let textNode = document.createElement("div");
                       textNode.id = "recognized-text";
                       textNode.innerHTML = (textarr.length === 0) ? "Not recognized" : `Recognized: ${textarr.join(" ")}`;
+                      link.id = "bucket-link";
+                      link.innerHTML = "Download JSON";
+                      link.href = `https://testbucker.hb.ru-msk.vkcs.cloud/${results.link}.json`;
+                      textNode.appendChild(link)
                       wrap.appendChild(textNode)
                   }
-                  else textNodeQuery.innerHTML = (textarr.length === 0) ? "Not recognized!" : `Recognized: ${textarr.join(" ")}`;
+                  else {
+                      textNodeQuery.innerHTML = (textarr.length === 0) ? "Not recognized!" : `Recognized: ${textarr.join(" ")}`;
+                      document.getElementById("bucket-link").href = `https://testbucker.hb.ru-msk.vkcs.cloud/${results.link}.json`;
+                  }
                   
 		      }) 
               .catch((error) => {
