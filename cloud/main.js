@@ -95,8 +95,12 @@ window.addEventListener('DOMContentLoaded',(e)=>{
                       wrap.appendChild(textNode)
                   }
                   else {
+                      let link = document.createElement("a");
                       textNodeQuery.innerHTML = (textarr.length === 0) ? "Not recognized!" : `Recognized: ${textarr.join(" ")}`;
-                      document.getElementById("bucket-link").href = `https://testbucker.hb.ru-msk.vkcs.cloud/${results.link}.json`;
+                      link.href = `https://testbucker.hb.ru-msk.vkcs.cloud/${results.link}.json`;
+                      link.innerHTML = "Download JSON";
+                      link.id = "bucket-link";
+                      textNodeQuery.appendChild(link);
                   }
                   
 		      }) 
