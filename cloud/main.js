@@ -91,6 +91,7 @@ window.addEventListener('DOMContentLoaded',(e)=>{
                       link.id = "bucket-link";
                       link.innerHTML = "Download JSON";
                       link.href = `https://testbucker.hb.ru-msk.vkcs.cloud/${results.link}.json`;
+                      textNode.appendChild(document.createElement("br"));
                       textNode.appendChild(link)
                       wrap.appendChild(textNode)
                   }
@@ -100,6 +101,7 @@ window.addEventListener('DOMContentLoaded',(e)=>{
                       link.href = `https://testbucker.hb.ru-msk.vkcs.cloud/${results.link}.json`;
                       link.innerHTML = "Download JSON";
                       link.id = "bucket-link";
+                      textNodeQuery.appendChild(document.createElement("br"));
                       textNodeQuery.appendChild(link);
                   }
                   
